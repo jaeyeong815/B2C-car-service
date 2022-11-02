@@ -14,8 +14,6 @@ const CarDetail = () => {
   const carData = getSelectCarInfo(id)[0];
   const { attribute, insurance, additionalProducts, startDate, amount } = carData;
 
-  console.log('startDate', startDate);
-
   return (
     <StCarDetail>
       <StCarImage src={attribute.imageUrl} />
