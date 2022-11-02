@@ -9,7 +9,7 @@ const conversionSegment = (segment) => {
     case 'SUV':
       return 'SUV';
     default:
-      return null;
+      return segment;
   }
 };
 
