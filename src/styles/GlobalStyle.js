@@ -49,6 +49,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.App {
+  width: 450px;
+  height: 80%;
+}
 `;
 
 export default GlobalStyle;
