@@ -1,6 +1,7 @@
 import { useCar } from '../../context/CarContext';
 import comma from '../../utils/comma';
 import conversionSegment from '../../utils/conversionSegment';
+import conversionFuelType from '../../utils/conversionFuelType';
 import CardItem from './CardItem';
 
 const CardList = () => {
@@ -16,7 +17,7 @@ const CardList = () => {
             name={car.attribute.name}
             segment={conversionSegment(car.attribute.segment)}
             imageUrl={car.attribute.imageUrl}
-            fuelType={car.attribute.fuelType}
+            fuelType={conversionFuelType(car.attribute.fuelType)}
             amount={comma(car.amount)}
           />
         </ul>
