@@ -1,32 +1,51 @@
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import color from '../../styles/color';
+import { useSelectCar } from '../../context/CarContext';
+import comma from '../../utils/comma';
+import conversionSegment from '../../utils/conversionSegment';
+import conversionFuelType from '../../utils/conversionFuelType';
+import conversionDate from '../../utils/conversionDate';
 import ListHeader from './ListHeader';
 import ListContent from './ListContent';
 
 const CarDetail = () => {
+  const { id } = useParams();
+  const getSelectCarInfo = useSelectCar();
+  const carData = getSelectCarInfo(id)[0];
+  const { attribute, insurance, additionalProducts, startDate, amount } = carData;
+
+  console.log('startDate', startDate);
+
   return (
     <StCarDetail>
-      <StCarImage />
+      <StCarImage src={attribute.imageUrl} />
       <StTitle>
-        <StBrand>현대</StBrand>
-        <StName>아반떼 CN7</StName>
+        <StBrand>{attribute.brand}</StBrand>
+        <StName>{attribute.name}</StName>
       </StTitle>
-      <StPrice>월 600,000 원</StPrice>
+      <StPrice>월 {comma(amount)} 원</StPrice>
       <div className="carInfo">
         <ListHeader text="차량 정보" />
-        <ListContent name="차종" description="중형" />
-        <ListContent name="연료" description="가솔린" />
-        <ListContent name="이용 가능일" description="7월 15일 (수) 부터" />
+        <ListContent name="차종" description={conversionSegment(attribute.segment)} />
+        <ListContent name="연료" description={conversionFuelType(attribute.fuelType)} />
+        <ListContent name="이용 가능일" description={conversionDate(startDate)} />
       </div>
-      <div className="insurance">
-        <ListHeader text="보험" />
-        <ListContent name="대인" description="무한" />
-        <ListContent name="대물" description="10억" />
-      </div>
-      <div className="additionalProducts">
-        <ListHeader text="추가상품" />
-        <ListContent name="하이파킹 주차권" description="월 130,000 원" />
-      </div>
+      {insurance && (
+        <div className="insurance">
+          <ListHeader text="보험" />
+          {insurance.map((data, index) => {
+            return <ListContent key={index} name={data.name} description={data.description} />;
+          })}
+        </div>
+      )}
+      {additionalProducts && (
+        <div className="additionalProducts">
+          <ListHeader text="추가상품" />
+          {additionalProducts.map((data, index) => {
+            return <ListContent key={index} name={data.name} description={`월 ${comma(data.amount)} 원`} />;
+          })}
+        </div>
+      )}
     </StCarDetail>
   );
 };
@@ -35,8 +54,7 @@ export default CarDetail;
 
 const StCarDetail = styled.div``;
 
-const StCarImage = styled.div`
-  background-color: ${color.gray};
+const StCarImage = styled.img`
   height: 200px;
 `;
 
