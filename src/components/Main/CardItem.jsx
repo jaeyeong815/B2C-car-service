@@ -22,7 +22,7 @@ const CardItem = () => {
 
 export default CardItem;
 
-const StCardItem = styled.div`
+const StCardItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
