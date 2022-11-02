@@ -14,7 +14,7 @@ const StButton = styled.button`
   border: none;
   border-radius: 65px;
 
-  width: 62 px;
+  width: 65px;
   height: 30px;
 
   margin-right: 8px;
