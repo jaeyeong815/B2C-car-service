@@ -4,4 +4,8 @@ export const options = {
     staleTime: Infinity,
     select: (data) => data.data.payload,
   },
+  Infinity: {
+    cacheTime: Infinity,
+    staleTime: Infinity,
+  },
 };

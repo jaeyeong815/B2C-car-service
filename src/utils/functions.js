@@ -8,6 +8,15 @@ export const getDateDiff = (createAt) => {
   return Math.abs(diffDate) < 86400000 ? true : false;
 };
 
+export const dateConverter = (startdate) => {
+  const startDate = new Date(startdate);
+  const weekday = ['일', '월', '화', '수', '목', '금', '토', '일'];
+  const month = startDate.getMonth() + 1;
+  const date = startDate.getDate();
+  const day = weekday[startDate.getDay()];
+  return `${month}월 ${date}일 (${day}) 부터`;
+};
+
 export const segmentConverter = (segment) => {
   switch (segment) {
     case 'C':

@@ -1,18 +1,20 @@
 import styled from 'styled-components';
 import Switch from './Switch';
 import { getDateDiff, segmentConverter, fuelTypeConverter } from '../../utils/functions';
+import { useNavigate } from 'react-router-dom';
 
 const Item = ({ item }) => {
-  const { amount, attribute, createdAt } = item;
+  const { id, amount, attribute, createdAt } = item;
   const { brand, fuelType, imageUrl, segment, name } = attribute;
 
+  const navigate = useNavigate();
   const isNew = getDateDiff(createdAt);
   const changedSegment = segmentConverter(segment);
   const changedFuelType = fuelTypeConverter(fuelType);
   const changedAmount = amount.toLocaleString();
 
   return (
-    <Container>
+    <Container onClick={() => navigate(`/${id}`)}>
       <LeftBox>
         <h3>{brand}</h3>
         <h3>{name}</h3>
@@ -22,7 +24,7 @@ const Item = ({ item }) => {
         <span>월 {changedAmount}원 부터</span>
       </LeftBox>
       <Img src={imageUrl} />
-      {isNew && <Switch text="신규" smallSize={true} />}
+      {isNew && <Switch text="신규" smallSize />}
     </Container>
   );
 };
