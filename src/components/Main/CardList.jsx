@@ -4,36 +4,35 @@ import comma from '../../utils/comma';
 import conversionSegment from '../../utils/conversionSegment';
 import conversionFuelType from '../../utils/conversionFuelType';
 import CardItem from './CardItem';
-import Loding from '../Loding';
+import Guide from '../Guide';
 
 const CardList = () => {
   const navigate = useNavigate();
   const isLoding = useLoding();
   const CardList = useCar();
 
-  console.log('isLoding', isLoding);
-
   const handleClick = (id) => {
     navigate(`/detail/${id}`);
   };
   return isLoding ? (
-    <Loding />
+    <Guide text="불러오는 중" />
+  ) : CardList.length > 0 ? (
+    CardList.map((car) => {
+      return (
+        <ul className="cardList" key={car.id} onClick={() => handleClick(car.id)}>
+          <CardItem
+            brand={car.attribute.brand}
+            name={car.attribute.name}
+            segment={conversionSegment(car.attribute.segment)}
+            imageUrl={car.attribute.imageUrl}
+            fuelType={conversionFuelType(car.attribute.fuelType)}
+            amount={comma(car.amount)}
+          />
+        </ul>
+      );
+    })
   ) : (
-    CardList &&
-      CardList.map((car) => {
-        return (
-          <ul className="cardList" key={car.id} onClick={() => handleClick(car.id)}>
-            <CardItem
-              brand={car.attribute.brand}
-              name={car.attribute.name}
-              segment={conversionSegment(car.attribute.segment)}
-              imageUrl={car.attribute.imageUrl}
-              fuelType={conversionFuelType(car.attribute.fuelType)}
-              amount={comma(car.amount)}
-            />
-          </ul>
-        );
-      })
+    <Guide text="차량이 없습니다." />
   );
 };
 
