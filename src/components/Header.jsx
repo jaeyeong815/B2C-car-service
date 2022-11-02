@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 import color from '../styles/color';
 import { BackIcon } from '../assets/BackIcon';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ icon, text }) => {
+  const navigate = useNavigate();
   return (
     <StHeader>
-      {icon && <BackIcon />}
+      {icon && (
+        <div className="goBack" onClick={() => navigate('/')}>
+          <BackIcon />
+        </div>
+      )}
       <span>{text}</span>
     </StHeader>
   );
@@ -22,7 +28,7 @@ const StHeader = styled.header`
   padding: 20px;
   border-bottom: 1.5px ${color.black} solid;
 
-  svg {
+  div {
     position: absolute;
     left: 20px;
   }
