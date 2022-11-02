@@ -23,7 +23,7 @@ const Div = styled.div`
   text-align: center;
   font-weight: 600;
   padding: 1.1rem;
-  border-bottom: 1.2px solid;
+  border-bottom: 1px solid;
   position: relative;
   span {
     position: absolute;
