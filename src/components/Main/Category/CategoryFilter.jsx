@@ -12,7 +12,7 @@ const CategoryFilter = () => {
   };
   useEffect(() => {
     getCategoryCarInfo('segment', selected);
-  }, [selected]);
+  }, [selected, getCategoryCarInfo]);
   return categoryList.map((category, index) => {
     return (
       <CategoryTag

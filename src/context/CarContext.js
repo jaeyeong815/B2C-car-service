@@ -32,7 +32,7 @@ export const CarProvider = ({ children }) => {
 
   const getCategoryCarInfo = useCallback((segment, condition) => {
     getFilterCarList(segment, condition).then((res) => setCarList(res));
-  });
+  }, []);
 
   return (
     <CarContext.Provider value={carList}>
