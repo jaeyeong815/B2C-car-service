@@ -49,6 +49,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+:root {
+  --color-black: #000000;
+  --color-lightgrey: #d9d9d9;
+  --color-blue: #0094FF;
+}
 `;
 
 export default GlobalStyle;
