@@ -37,14 +37,18 @@ const StCardItem = styled.li`
 const StTitle = styled.div`
   margin-bottom: 10px;
   p {
+    margin-bottom: 5px;
     font-weight: 800;
   }
 `;
 
-const StDescription = styled.div``;
+const StDescription = styled.div`
+  p {
+    font-size: 14px;
+  }
+`;
 
 const StImage = styled.img`
-  background-color: ${color.gray};
   width: 170px;
   height: 80px;
 `;
