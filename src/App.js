@@ -1,11 +1,14 @@
 import Router from './Router';
+import { CarProvider } from './context/CarContext';
 import GlobalStyle from './styles/GlobalStyle';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Router />
+      <CarProvider>
+        <Router />
+      </CarProvider>
     </div>
   );
 }

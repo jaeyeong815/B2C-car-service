@@ -1,21 +1,22 @@
 import styled from 'styled-components';
 import color from '../../styles/color';
 
-// TODO props = {brand, name, classType, fuelType, amount}
-const CardItem = () => {
+const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount }) => {
   return (
     <StCardItem>
       <div className="contentWrapper">
         <StTitle>
-          <p>기아</p>
-          <p>EV6</p>
+          <p>{brand}</p>
+          <p>{name}</p>
         </StTitle>
         <StDescription>
-          <p>중형 / 전기</p>
-          <p>월 600,000 원 부터</p>
+          <p>
+            {segment} / {fuelType}
+          </p>
+          <p>월 {amount} 원 부터</p>
         </StDescription>
       </div>
-      <StImage />
+      <StImage src={imageUrl} />
     </StCardItem>
   );
 };
@@ -42,7 +43,7 @@ const StTitle = styled.div`
 
 const StDescription = styled.div``;
 
-const StImage = styled.div`
+const StImage = styled.img`
   background-color: ${color.gray};
   width: 170px;
   height: 80px;
