@@ -18,9 +18,9 @@ const StListHeader = styled.div`
   display: flex;
   align-items: center;
   p {
-    color: ${color.white};
+    font-size: 16px;
     font-weight: 700;
-    font-size: 20px;
+    color: ${color.white};
 
     margin-left: 20px;
   }
