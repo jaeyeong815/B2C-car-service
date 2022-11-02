@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 import color from '../../../styles/color';
-import CategoryTag from './CategoryTag';
+import CategoryFilter from './CategoryFilter';
 
 const Category = () => {
   return (
     <StCategory>
-      <CategoryTag select={true} text="전체" />
-      <CategoryTag text="대형" />
-      <CategoryTag text="중형" />
-      <CategoryTag text="소형" />
+      <CategoryFilter />
     </StCategory>
   );
 };

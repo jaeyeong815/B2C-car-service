@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import color from '../../../styles/color';
 
-const CategoryTag = ({ select, text }) => {
-  return <StButton select={select}>{text}</StButton>;
+const CategoryTag = ({ onClick, name, select, text }) => {
+  return (
+    <StButton onClick={onClick} name={name} select={select}>
+      {text}
+    </StButton>
+  );
 };
 
 export default CategoryTag;
