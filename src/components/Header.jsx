@@ -13,7 +13,7 @@ const Header = ({ icon, text }) => {
 
 export default Header;
 
-const StHeader = styled.div`
+const StHeader = styled.header`
   position: relative;
   display: flex;
   align-items: center;
