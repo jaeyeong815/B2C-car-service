@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-const Loding = () => {
+const Guide = ({ text }) => {
   return (
-    <StLoding>
-      <p>불러오는 중</p>
-    </StLoding>
+    <StGuide>
+      <p>{text}</p>
+    </StGuide>
   );
 };
 
-export default Loding;
+export default Guide;
 
-const StLoding = styled.div`
+const StGuide = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
