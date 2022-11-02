@@ -53,17 +53,15 @@ table {
 #root{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
   height: 100vh;
 }
 
 .App {
-  width: 450px;
-  height: 80%;
-
-  border: 1px solid;
+  max-width: 450px;
+  min-width: 360px;
 }
 `;
 
