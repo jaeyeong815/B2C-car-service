@@ -62,6 +62,8 @@ table {
 .App {
   width: 450px;
   height: 80%;
+
+  border: 1px solid;
 }
 `;
 
