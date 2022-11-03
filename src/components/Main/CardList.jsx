@@ -19,7 +19,7 @@ const CardList = () => {
   ) : CardList.length > 0 ? (
     CardList.map((car) => {
       return (
-        <ul className="cardList" key={car.id} onClick={() => handleClick(car.id)}>
+        <li className="cardList" key={car.id} onClick={() => handleClick(car.id)}>
           <CardItem
             brand={car.attribute.brand}
             name={car.attribute.name}
@@ -28,7 +28,7 @@ const CardList = () => {
             fuelType={conversionFuelType(car.attribute.fuelType)}
             amount={comma(car.amount)}
           />
-        </ul>
+        </li>
       );
     })
   ) : (

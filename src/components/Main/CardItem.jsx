@@ -23,7 +23,7 @@ const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount }) => {
 
 export default CardItem;
 
-const StCardItem = styled.li`
+const StCardItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
