@@ -19,30 +19,16 @@ const CardSlide = () => {
           getCategoryCarInfo('segment', categoryList[realIndex]);
         }}
       >
-        <SwiperSlide>
-          <CardList />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardList />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardList />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardList />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardList />
-        </SwiperSlide>
+        {categoryList.map((_, index) => {
+          return (
+            <SwiperSlide key={`swiper-slide-${index}`}>
+              <CardList />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
 };
 
 export default CardSlide;
-
-// const goNext = () => {
-//   if (swiperRef?.current?.swiper) {
-//     swiperRef.current.swiper.activeIndex();
-//   }
-// };
