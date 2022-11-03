@@ -46,8 +46,6 @@ export const CarProvider = ({ children }) => {
     [activeIndex]
   );
 
-  console.log('context activeIndex : ', activeIndex);
-
   return (
     <CarContext.Provider value={carList}>
       <SelectCarContext.Provider value={getSelectCarInfo}>

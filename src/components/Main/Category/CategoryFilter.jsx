@@ -6,18 +6,16 @@ import CategoryTag from './CategoryTag';
 
 const CategoryFilter = () => {
   const getCategoryCarInfo = useFilter();
-  const { activeCategory } = useActiveCategory();
-  const [selected, setSelected] = useState('전체');
-  const [activeIdx, SetActiveIdx] = useState(0);
+  const { activeIndex, activeCategory } = useActiveCategory();
+  const [selected, SetSelected] = useState(0);
 
   const handleOnclick = (e) => {
-    setSelected(e.target.name);
-    SetActiveIdx(e.target.id);
+    SetSelected(e.target.id);
   };
 
   useEffect(() => {
-    activeCategory(activeIdx);
-    getCategoryCarInfo('segment', selected);
+    activeCategory(selected);
+    getCategoryCarInfo('segment', categoryList[selected]);
   }, [selected]);
 
   return categoryList.map((category, index) => {
@@ -28,7 +26,7 @@ const CategoryFilter = () => {
         text={conversionSegment(category)}
         name={category}
         onClick={handleOnclick}
-        select={category === selected || index === activeIdx}
+        select={index === parseInt(activeIndex)}
       />
     );
   });
