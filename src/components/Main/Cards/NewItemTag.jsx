@@ -32,5 +32,6 @@ const StNewItemTag = styled.div`
   span {
     font-size: 14px;
     font-weight: 500;
+    word-break: keep-all;
   }
 `;

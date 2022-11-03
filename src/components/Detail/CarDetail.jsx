@@ -8,6 +8,7 @@ import ListContent from './ListContent';
 import Guide from '../common/Guide';
 import { CAR_TYPE, CAR_FUEL_TYPE } from '../../utils/carAttribute';
 import getKeyByValue from '../../utils/getKeyByValue';
+import MetaTag from './MetaTag';
 
 const CarDetail = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const CarDetail = () => {
   ) : (
     carData && (
       <>
+        <MetaTag />
         <StCarImage src={carData.attribute?.imageUrl} />
         <StTitle>
           <StBrand>{carData.attribute?.brand}</StBrand>
@@ -57,7 +59,7 @@ const CarDetail = () => {
 export default CarDetail;
 
 const StCarImage = styled.img`
-  height: 200px;
+  width: 100%;
 `;
 
 const StTitle = styled.div`

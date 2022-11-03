@@ -3,6 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 // reset all html tags with createGlobalStyle
 const GlobalStyle = createGlobalStyle`
 
+* {  
+  font-family: 'Inter', sans-serif;
+}
 // CSS 리셋
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
