@@ -2,12 +2,12 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { useSelectCar, useLoding } from '../../context/CarContext';
 import comma from '../../utils/comma';
-import conversionSegment from '../../utils/conversionSegment';
-import conversionFuelType from '../../utils/conversionFuelType';
 import conversionDate from '../../utils/conversionDate';
 import ListHeader from './ListHeader';
 import ListContent from './ListContent';
-import Guide from '../Guide';
+import Guide from '../common/Guide';
+import { CAR_TYPE, CAR_FUEL_TYPE } from '../../utils/carAttribute';
+import getKeyByValue from '../../utils/getKeyByValue';
 
 const CarDetail = () => {
   const { id } = useParams();
@@ -19,20 +19,20 @@ const CarDetail = () => {
     <Guide text="불러오는 중" />
   ) : (
     carData && (
-      <StCarDetail>
-        <StCarImage src={carData.attribute.imageUrl} />
+      <>
+        <StCarImage src={carData.attribute?.imageUrl} />
         <StTitle>
-          <StBrand>{carData.attribute.brand}</StBrand>
-          <StName>{carData.attribute.name}</StName>
+          <StBrand>{carData.attribute?.brand}</StBrand>
+          <StName>{carData.attribute?.name}</StName>
         </StTitle>
         <StPrice>월 {comma(carData.amount)} 원</StPrice>
         <div className="carInfo">
           <ListHeader text="차량 정보" />
-          <ListContent name="차종" description={conversionSegment(carData.attribute.segment)} />
-          <ListContent name="연료" description={conversionFuelType(carData.attribute.fuelType)} />
+          <ListContent name="차종" description={getKeyByValue(CAR_TYPE, carData.attribute?.segment)} />
+          <ListContent name="연료" description={getKeyByValue(CAR_FUEL_TYPE, carData.attribute?.fuelType)} />
           <ListContent name="이용 가능일" description={conversionDate(carData.startDate)} />
         </div>
-        {carData.insurance && (
+        {carData.insurance?.length > 0 && (
           <div className="insurance">
             <ListHeader text="보험" />
             {carData.insurance.map((data, index) => {
@@ -40,7 +40,8 @@ const CarDetail = () => {
             })}
           </div>
         )}
-        {carData.additionalProducts && (
+
+        {carData.additionalProducts?.length > 0 && (
           <div className="additionalProducts">
             <ListHeader text="추가상품" />
             {carData.additionalProducts.map((data, index) => {
@@ -48,14 +49,12 @@ const CarDetail = () => {
             })}
           </div>
         )}
-      </StCarDetail>
+      </>
     )
   );
 };
 
 export default CarDetail;
-
-const StCarDetail = styled.div``;
 
 const StCarImage = styled.img`
   height: 200px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import color from '../styles/color';
-import { BackIcon } from '../assets/BackIcon';
+import color from '../../styles/color';
+import { BackIcon } from '../../assets/BackIcon';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {

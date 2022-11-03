@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import color from '../../styles/color';
+import color from '../../../styles/color';
+import { getDateDiff } from '../../../utils/getDateDiff';
+import NewItemTag from './NewItemTag';
 
-const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount }) => {
+const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount, createdAt }) => {
   return (
     <StCardItem>
       <div className="contentWrapper">
@@ -16,6 +18,7 @@ const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount }) => {
           <p>월 {amount} 원 부터</p>
         </StDescription>
       </div>
+      {getDateDiff(createdAt) && <NewItemTag />}
       <StImage src={imageUrl} />
     </StCardItem>
   );
@@ -24,14 +27,14 @@ const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount }) => {
 export default CardItem;
 
 const StCardItem = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 20px;
-
   height: 120px;
   border-bottom: 1.5px ${color.black} solid;
+  cursor: pointer;
 `;
 
 const StTitle = styled.div`

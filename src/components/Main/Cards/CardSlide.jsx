@@ -1,9 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { useActiveCategory, useFilter } from '../../context/CarContext';
-import categoryList from '../../utils/category';
-import Category from './Category/Category';
+import { useActiveCategory, useFilter } from '../../../context/CarContext';
+import { CAR_CATEGORY } from '../../../utils/carAttribute';
+import Category from '../Category/Category';
 import CardList from './CardList';
+import styled from 'styled-components';
 
 const CardSlide = () => {
   const { activeCategory } = useActiveCategory();
@@ -16,13 +17,15 @@ const CardSlide = () => {
         className="swiper-container"
         onActiveIndexChange={({ realIndex }) => {
           activeCategory(realIndex);
-          getCategoryCarInfo('segment', categoryList[realIndex]);
+          getCategoryCarInfo('segment', CAR_CATEGORY[realIndex]);
         }}
       >
-        {categoryList.map((_, index) => {
+        {CAR_CATEGORY.map((_, index) => {
           return (
             <SwiperSlide key={`swiper-slide-${index}`}>
-              <CardList />
+              <StCardWrapper>
+                <CardList />
+              </StCardWrapper>
             </SwiperSlide>
           );
         })}
@@ -32,3 +35,7 @@ const CardSlide = () => {
 };
 
 export default CardSlide;
+
+const StCardWrapper = styled.div`
+  min-height: calc(100vh - 100px);
+`;

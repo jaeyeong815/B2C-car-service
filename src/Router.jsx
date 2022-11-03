@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Detail from './pages/Detail';
-import Header from './components/Header';
+import Header from './components/common/Header';
 
 const Router = () => {
   return (

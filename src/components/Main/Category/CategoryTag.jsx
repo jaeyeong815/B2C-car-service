@@ -27,7 +27,5 @@ const StButton = styled.button`
   font-size: 13px;
   font-weight: 500;
 
-  word-break: keep-all;
-
   cursor: pointer;
 `;

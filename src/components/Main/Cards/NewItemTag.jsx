@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import color from '../../styles/color';
+import color from '../../../styles/color';
 
 const NewItemTag = () => {
   return (
@@ -12,6 +12,9 @@ const NewItemTag = () => {
 export default NewItemTag;
 
 const StNewItemTag = styled.div`
+  position: absolute;
+  top: 8px;
+  right: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +27,6 @@ const StNewItemTag = styled.div`
 
   width: 25px;
   height: 15px;
-  margin-top: 100px;
   padding: 5px 18px;
 
   span {

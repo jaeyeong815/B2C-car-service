@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { useCar, useLoding } from '../../context/CarContext';
-import comma from '../../utils/comma';
-import conversionSegment from '../../utils/conversionSegment';
-import conversionFuelType from '../../utils/conversionFuelType';
+import { useCar, useLoding } from '../../../context/CarContext';
+import comma from '../../../utils/comma';
 import CardItem from './CardItem';
-import Guide from '../Guide';
+import Guide from '../../common/Guide';
+import { CAR_TYPE, CAR_FUEL_TYPE } from '../../../utils/carAttribute';
+import getKeyByValue from '../../../utils/getKeyByValue';
 
 const CardList = () => {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ const CardList = () => {
   const handleClick = (id) => {
     navigate(`/detail/${id}`);
   };
+
   return isLoding ? (
     <Guide text="불러오는 중" />
   ) : CardList.length > 0 ? (
@@ -23,10 +24,11 @@ const CardList = () => {
           <CardItem
             brand={car.attribute.brand}
             name={car.attribute.name}
-            segment={conversionSegment(car.attribute.segment)}
+            segment={getKeyByValue(CAR_TYPE, car.attribute.segment)}
             imageUrl={car.attribute.imageUrl}
-            fuelType={conversionFuelType(car.attribute.fuelType)}
+            fuelType={getKeyByValue(CAR_FUEL_TYPE, car.attribute.fuelType)}
             amount={comma(car.amount)}
+            createdAt={car.createdAt}
           />
         </li>
       );
