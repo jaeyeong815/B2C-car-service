@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import color from '../../styles/color';
+import color from '../../../styles/color';
 
 const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount }) => {
   return (
@@ -27,11 +27,10 @@ const StCardItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 20px;
-
   height: 120px;
   border-bottom: 1.5px ${color.black} solid;
+  cursor: pointer;
 `;
 
 const StTitle = styled.div`
