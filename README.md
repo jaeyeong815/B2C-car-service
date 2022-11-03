@@ -113,28 +113,26 @@ $ yarn start
  ┣ 📂assets
  ┃ ┗ 📜BackIcon.jsx
  ┣ 📂components
- ┃ ┣ 📂Detail
+ ┃ ┣ 📂Detail                   // 상세 페이지 차량 정보 컴포넌트
  ┃ ┃ ┣ 📜CarDetail.jsx
  ┃ ┃ ┣ 📜ListContent.jsx
  ┃ ┃ ┣ 📜ListHeader.jsx
  ┃ ┃ ┗ 📜MetaTag.jsx
  ┃ ┣ 📂Main
- ┃ ┃ ┣ 📂Cards
+ ┃ ┃ ┣ 📂Cards                  // 메인 페이지 차량 리스트 컴포넌트
  ┃ ┃ ┃ ┣ 📜CardItem.jsx
- ┃ ┃ ┃ ┣ 📜CardList.jsx
- ┃ ┃ ┃ ┣ 📜CardSlide.jsx
+ ┃ ┃ ┃ ┣ 📜CardList.jsx 
+ ┃ ┃ ┃ ┣ 📜CardSlide.jsx 
  ┃ ┃ ┃ ┗ 📜NewItemTag.jsx
- ┃ ┃ ┗ 📂Category
+ ┃ ┃ ┗ 📂Category               // 메인 페이지 카테고리 컴포넌트 (nav)
  ┃ ┃ ┃ ┣ 📜Category.jsx
  ┃ ┃ ┃ ┣ 📜CategoryFilter.jsx
  ┃ ┃ ┃ ┗ 📜CategoryTag.jsx
  ┃ ┗ 📂common
- ┃ ┃ ┣ 📜Guide.jsx
+ ┃ ┃ ┣ 📜Guide.jsx               // 차량이 없는 경우와 로딩중인 경우 안내문구
  ┃ ┃ ┗ 📜Header.jsx
  ┣ 📂context
- ┃ ┗ 📜CarContext.js
- ┣ 📂hooks
- ┃ ┗ 📜.gitkeep
+ ┃ ┗ 📜CarContext.js             // Context API
  ┣ 📂pages
  ┃ ┣ 📜Detail.jsx
  ┃ ┗ 📜Main.jsx
@@ -143,11 +141,11 @@ $ yarn start
  ┃ ┗ 📜color.js
  ┣ 📂utils
  ┃ ┣ 📜axios.js
- ┃ ┣ 📜carAttribute.js
- ┃ ┣ 📜comma.js
- ┃ ┣ 📜conversionDate.js
- ┃ ┣ 📜getDateDiff.js
- ┃ ┗ 📜getKeyByValue.js
+ ┃ ┣ 📜carAttribute.js            // 상수 데이터
+ ┃ ┣ 📜comma.js                   // 3자리 숫자마다 콤마
+ ┃ ┣ 📜conversionDate.js          // 날짜(월, 일, 요일) 치환하는 함수
+ ┃ ┣ 📜getDateDiff.js             // 신규 뱃지 확인하는 함수
+ ┃ ┗ 📜getKeyByValue.js           // 객체의 키와 값을 반환하는 함수
  ┣ 📜App.js
  ┣ 📜Router.jsx
  ┗ 📜index.js
