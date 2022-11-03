@@ -10,7 +10,7 @@ export const getDateDiff = (createAt) => {
 
 export const dateConverter = (startdate) => {
   const startDate = new Date(startdate);
-  const weekday = ['일', '월', '화', '수', '목', '금', '토', '일'];
+  const weekday = ['일', '월', '화', '수', '목', '금', '토'];
   const month = startDate.getMonth() + 1;
   const date = startDate.getDate();
   const day = weekday[startDate.getDay()];
