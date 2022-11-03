@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import color from '../../../styles/color';
 
-const CategoryTag = ({ onClick, name, select, text }) => {
+const CategoryTag = ({ onClick, name, select, text, id }) => {
   return (
-    <StButton onClick={onClick} name={name} select={select}>
+    <StButton onClick={onClick} name={name} select={select} id={id}>
       {text}
     </StButton>
   );
