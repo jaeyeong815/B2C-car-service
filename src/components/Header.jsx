@@ -1,18 +1,28 @@
 import styled from 'styled-components';
 import color from '../styles/color';
 import { BackIcon } from '../assets/BackIcon';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Header = ({ icon, text }) => {
+const Header = () => {
+  const { pathname: path } = useLocation();
   const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate(-1);
+  };
+
   return (
     <StHeader>
-      {icon && (
-        <div className="goBack" onClick={() => navigate('/')}>
-          <BackIcon />
-        </div>
+      {path === '/' ? (
+        <span>전체 차량</span>
+      ) : (
+        <>
+          <div onClick={handleHomeClick}>
+            <BackIcon />
+          </div>
+          <span>차량상세</span>
+        </>
       )}
-      <span>{text}</span>
     </StHeader>
   );
 };
