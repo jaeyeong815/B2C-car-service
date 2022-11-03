@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
-import { getCarList, getFilterCarList } from '../apis/apis';
+import apis from '../apis/apis';
 
 const CarContext = createContext(null);
 const LodingContext = createContext(null);
@@ -20,7 +20,7 @@ export const CarProvider = ({ children }) => {
 
   useEffect(() => {
     setIsLoding(true);
-    getCarList().then((res) => {
+    apis.getCarList().then((res) => {
       setCarList(res);
       setIsLoding(false);
     });
@@ -38,7 +38,7 @@ export const CarProvider = ({ children }) => {
   };
 
   const getCategoryCarInfo = (segment, condition) => {
-    getFilterCarList(segment, condition).then((res) => {
+    apis.getFilteredCarList(segment, condition).then((res) => {
       setCarList(res);
     });
   };
