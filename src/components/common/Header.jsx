@@ -39,6 +39,7 @@ const StHeader = styled.header`
   div {
     position: absolute;
     left: 20px;
+    cursor: pointer;
   }
   span {
     font-size: 20px;
