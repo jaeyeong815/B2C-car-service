@@ -34,7 +34,7 @@ const StHeader = styled.header`
   }
 
   span {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
   }
 `;
