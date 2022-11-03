@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useActiveCategory, useFilter } from '../../../context/CarContext';
-import categoryList from '../../../utils/category';
-import conversionSegment from '../../../utils/conversionSegment';
 import CategoryTag from './CategoryTag';
+import { CAR_CATEGORY, CAR_TYPE } from '../../../utils/carAttribute';
+import getKeyByValue from '../../../utils/getKeyByValue';
 
 const CategoryFilter = () => {
   const getCategoryCarInfo = useFilter();
@@ -15,15 +15,15 @@ const CategoryFilter = () => {
 
   useEffect(() => {
     activeCategory(selected);
-    getCategoryCarInfo('segment', categoryList[selected]);
+    getCategoryCarInfo('segment', CAR_CATEGORY[selected]);
   }, [selected]);
 
-  return categoryList.map((category, index) => {
+  return CAR_CATEGORY.map((category, index) => {
     return (
       <CategoryTag
         key={index}
         id={index}
-        text={conversionSegment(category)}
+        text={getKeyByValue(CAR_TYPE, category)}
         name={category}
         onClick={handleOnclick}
         select={index === parseInt(activeIndex)}

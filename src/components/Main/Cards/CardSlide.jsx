@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { useActiveCategory, useFilter } from '../../context/CarContext';
-import categoryList from '../../utils/category';
-import Category from './Category/Category';
+import { useActiveCategory, useFilter } from '../../../context/CarContext';
+import Category from '../Category/Category';
 import CardList from './CardList';
+import { CAR_CATEGORY } from '../../../utils/carAttribute';
 
 const CardSlide = () => {
   const { activeCategory } = useActiveCategory();
@@ -16,7 +16,7 @@ const CardSlide = () => {
         className="swiper-container"
         onActiveIndexChange={({ realIndex }) => {
           activeCategory(realIndex);
-          getCategoryCarInfo('segment', categoryList[realIndex]);
+          getCategoryCarInfo('segment', CAR_CATEGORY[realIndex]);
         }}
       >
         {categoryList.map((_, index) => {
