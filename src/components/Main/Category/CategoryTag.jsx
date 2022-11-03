@@ -18,13 +18,13 @@ const StButton = styled.button`
   border: none;
   border-radius: 65px;
 
-  width: 65px;
-  height: 30px;
+  width: 60px;
+  height: 25px;
 
   margin-right: 8px;
   padding: 5px 18px;
 
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
 
   cursor: pointer;
