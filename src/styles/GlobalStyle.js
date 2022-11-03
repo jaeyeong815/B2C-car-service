@@ -63,6 +63,8 @@ table {
 .App {
   max-width: 450px;
   min-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
 }
 `;
 
