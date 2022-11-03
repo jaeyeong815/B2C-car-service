@@ -37,14 +37,11 @@ export const CarProvider = ({ children }) => {
     setActiveIndex(activeIdx);
   };
 
-  const getCategoryCarInfo = useCallback(
-    (segment, condition) => {
-      getFilterCarList(segment, condition).then((res) => {
-        setCarList(res);
-      });
-    },
-    [activeIndex]
-  );
+  const getCategoryCarInfo = (segment, condition) => {
+    getFilterCarList(segment, condition).then((res) => {
+      setCarList(res);
+    });
+  };
 
   return (
     <CarContext.Provider value={carList}>
