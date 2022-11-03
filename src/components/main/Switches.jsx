@@ -6,7 +6,7 @@ const Switches = () => {
   return (
     <Div>
       {category.map((item) => (
-        <Switch key={item.type} {...item} />
+        <Switch key={item.segment} {...item} />
       ))}
     </Div>
   );

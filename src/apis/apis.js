@@ -7,3 +7,7 @@ export const instance = axios.create({
 export const getCars = async () => {
   return instance.get(`${process.env.REACT_APP_API}`);
 };
+
+export const assortedCars = async (segment) => {
+  return instance.get(`${process.env.REACT_APP_API}?segment=${segment}`);
+};

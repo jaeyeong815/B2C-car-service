@@ -1,22 +1,22 @@
 export const category = [
   {
-    type: 'all',
     text: '전체',
+    segment: '',
   },
   {
-    type: 'big',
     text: '대형',
+    segment: 'E',
   },
   {
-    type: 'middle',
     text: '중형',
+    segment: 'D',
   },
   {
-    type: 'small',
     text: '소형',
+    segment: 'C',
   },
   {
-    type: 'SUV',
     text: 'SUV',
+    segment: 'SUV',
   },
 ];

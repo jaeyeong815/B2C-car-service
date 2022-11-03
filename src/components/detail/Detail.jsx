@@ -18,7 +18,6 @@ const Detail = () => {
   if (isLoading) return <Empty text="불러오는 중" />;
 
   const { additionalProducts, amount, attribute, insurance, startDate } = data;
-  console.log(data);
 
   return (
     <>

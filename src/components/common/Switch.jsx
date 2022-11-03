@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Switch = ({ text, smallSize, isSelected }) => {
+const Switch = ({ text, segment, smallSize, isSelected }) => {
   if (smallSize) return <SmallButton>{text}</SmallButton>;
   return <Button>{text}</Button>;
 };
@@ -9,9 +9,9 @@ export default Switch;
 
 const Button = styled.button`
   text-align: center;
-  color: ${({ isSelected }) => 'var(--color-black)' || 'white'};
-  background-color: ${({ isSelected }) => 'var(--color-lightgrey)' || 'var(--color-black)'};
-  font-weight: ${({ isSelected }) => '600' || 'bold'};
+  color: ${({ isSelected }) => (isSelected ? 'white' : 'var(--color-black)')};
+  background-color: ${({ isSelected }) => (isSelected ? 'var(--color-black)' : 'var(--color-lightgrey)')};
+  font-weight: ${({ isSelected }) => (isSelected ? 'bold' : '600')};
   border: transparent;
   border-radius: 25px;
   width: 55px;
