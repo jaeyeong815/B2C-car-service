@@ -28,6 +28,16 @@
     "lint": "eslint --cache .",
     "postbuild": "react-snap"
   },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/detail"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
