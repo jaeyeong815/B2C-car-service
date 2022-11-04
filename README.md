@@ -190,6 +190,10 @@ $ yarn start
 - Swiper Slider 라이브러리를 사용하여 페이지를 넘기면 다음 카테고리로 이동할 수 있도록 구현했습니다.
 이를 통해 사용자가 서비스를 더욱 편하게 이용할 수 있도록 했습니다.
 
+  <div align="center">
+    <img src='https://user-images.githubusercontent.com/85178602/199873891-c70f8a30-9939-4cd3-938c-c958428b79ca.gif' alt='동작gif' width="300" />
+  </div>
+
   https://github.com/WantedPreonboardingFE5team/pre-onboarding-7th-2-1-5/blob/1f0e3e3052108a98d42aeaabc9bdf2d0b475571a/src/components/Main/Cards/CardSlide.jsx#L13-L35
 
 ### Utils 함수 분리
