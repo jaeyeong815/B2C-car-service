@@ -6,7 +6,7 @@
 
 ## 📅 프로젝트 기간
 
-기간 : 2022년 11월 2일 ~ 2022년 11월 3일
+기간 : 2022년 11월 2일 ~ 2022년 11월 4일
 
 ## 👥 팀원 소개
 
@@ -95,9 +95,9 @@ $ yarn start
 
 ## 🔗 배포 링크
 
-[알티 모빌리티](http://pre-onboarding-2-1-5.s3-website.ap-northeast-2.amazonaws.com/)
+[알티 모빌리티](https://pre-onboarding-7th-2-1-5-eta.vercel.app/)
 
-- 해당 프로젝트는 AWS S3를 통해 배포하였습니다.
+- 해당 프로젝트는 vercel을 통해 배포하였습니다.
 - 상단 링크에 접속하시면 바로 해당 사이트를 확인할 수 있습니다.
 
 ## 📦 파일 구조
@@ -113,28 +113,26 @@ $ yarn start
  ┣ 📂assets
  ┃ ┗ 📜BackIcon.jsx
  ┣ 📂components
- ┃ ┣ 📂Detail
+ ┃ ┣ 📂Detail                   // 상세 페이지 차량 정보 컴포넌트
  ┃ ┃ ┣ 📜CarDetail.jsx
  ┃ ┃ ┣ 📜ListContent.jsx
  ┃ ┃ ┣ 📜ListHeader.jsx
  ┃ ┃ ┗ 📜MetaTag.jsx
  ┃ ┣ 📂Main
- ┃ ┃ ┣ 📂Cards
+ ┃ ┃ ┣ 📂Cards                  // 메인 페이지 차량 리스트 컴포넌트
  ┃ ┃ ┃ ┣ 📜CardItem.jsx
- ┃ ┃ ┃ ┣ 📜CardList.jsx
- ┃ ┃ ┃ ┣ 📜CardSlide.jsx
+ ┃ ┃ ┃ ┣ 📜CardList.jsx 
+ ┃ ┃ ┃ ┣ 📜CardSlide.jsx 
  ┃ ┃ ┃ ┗ 📜NewItemTag.jsx
- ┃ ┃ ┗ 📂Category
+ ┃ ┃ ┗ 📂Category               // 메인 페이지 카테고리 컴포넌트 (nav)
  ┃ ┃ ┃ ┣ 📜Category.jsx
  ┃ ┃ ┃ ┣ 📜CategoryFilter.jsx
  ┃ ┃ ┃ ┗ 📜CategoryTag.jsx
  ┃ ┗ 📂common
- ┃ ┃ ┣ 📜Guide.jsx
+ ┃ ┃ ┣ 📜Guide.jsx               // 차량이 없는 경우와 로딩중인 경우 안내문구
  ┃ ┃ ┗ 📜Header.jsx
  ┣ 📂context
- ┃ ┗ 📜CarContext.js
- ┣ 📂hooks
- ┃ ┗ 📜.gitkeep
+ ┃ ┗ 📜CarContext.js             // Context API
  ┣ 📂pages
  ┃ ┣ 📜Detail.jsx
  ┃ ┗ 📜Main.jsx
@@ -143,11 +141,11 @@ $ yarn start
  ┃ ┗ 📜color.js
  ┣ 📂utils
  ┃ ┣ 📜axios.js
- ┃ ┣ 📜carAttribute.js
- ┃ ┣ 📜comma.js
- ┃ ┣ 📜conversionDate.js
- ┃ ┣ 📜getDateDiff.js
- ┃ ┗ 📜getKeyByValue.js
+ ┃ ┣ 📜carAttribute.js            // 상수 데이터
+ ┃ ┣ 📜comma.js                   // 3자리 숫자마다 콤마
+ ┃ ┣ 📜conversionDate.js          // 날짜(월, 일, 요일) 치환하는 함수
+ ┃ ┣ 📜getDateDiff.js             // 신규 뱃지 확인하는 함수
+ ┃ ┗ 📜getKeyByValue.js           // 객체의 키와 값을 반환하는 함수
  ┣ 📜App.js
  ┣ 📜Router.jsx
  ┗ 📜index.js
@@ -161,10 +159,10 @@ $ yarn start
 
 | 페이지             | API 연결 및 기능                                                                                                                                                                                                                                                                                     |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 차량 리스트 | ✅차량이 없을 때 처리<br> ✅차량 불러오는 중 처리<br> ✅업데이트된 지 24시간이 채 되지 않은 차량은 신규 뱃지 표시|
-| 차량 상세        | ✅차량의 상세 정보 표시<br>✅‘브랜드, 차종, 연료타입, 이용 가능일, 대여료, 보험, 추가 상품' 표시<br>✅추가 상품이 없는 경우 해당 영역이 뜨지 않도록 구현<br>|
-| 공통 헤더        | ✅두 페이지는 공통 헤더를 공유합니다.<br>✅헤더에는 전체 차량 / 차량 상세가 표시됩니다.<br> ✅상세 페이지에는 리스트로 돌아가는 버튼이 구현되어 있습니다.       |
-| 반응형 | ✅모바일<br>✅태블릿 <br>✅PC |
+| 차량 리스트 | ✅ 차량이 없을 때 처리<br> ✅ 차량 불러오는 중 처리<br> ✅ 업데이트된 지 24시간이 채 되지 않은 차량은 신규 뱃지 표시|
+| 차량 상세        | ✅ 차량의 상세 정보 표시<br>✅ ‘브랜드, 차종, 연료타입, 이용 가능일, 대여료, 보험, 추가 상품' 표시<br>✅ 추가 상품이 없는 경우 해당 영역이 뜨지 않도록 구현<br>|
+| 공통 헤더        | ✅ 두 페이지는 공통 헤더를 공유합니다.<br>✅ 헤더에는 전체 차량 / 차량 상세가 표시됩니다.<br> ✅ 상세 페이지에는 리스트로 돌아가는 버튼이 구현되어 있습니다.       |
+| 반응형 | ✅ 모바일<br>✅ 태블릿 <br>✅ PC |
 
 ## ❗️ 필수 요구사항
 
@@ -186,13 +184,35 @@ $ yarn start
 
 ### Context API
 - props를 넘겨주지 않아도 각 component에서 전역적으로 관리되는 데이터를 필요한 곳에서만 사용할 수 있습니다.
+  https://github.com/WantedPreonboardingFE5team/pre-onboarding-7th-2-1-5/blob/1f0e3e3052108a98d42aeaabc9bdf2d0b475571a/src/components/Main/Cards/CardSlide.jsx#L13-L35
 
 ### Swiper Slider 
 - Swiper Slider 라이브러리를 사용하여 페이지를 넘기면 다음 카테고리로 이동할 수 있도록 구현했습니다.
 이를 통해 사용자가 서비스를 더욱 편하게 이용할 수 있도록 했습니다.
 
+  <div align="center">
+    <img src='https://user-images.githubusercontent.com/85178602/199873891-c70f8a30-9939-4cd3-938c-c958428b79ca.gif' alt='동작gif' width="300" />
+  </div>
+
+  https://github.com/WantedPreonboardingFE5team/pre-onboarding-7th-2-1-5/blob/1f0e3e3052108a98d42aeaabc9bdf2d0b475571a/src/components/Main/Cards/CardSlide.jsx#L13-L35
+
 ### Utils 함수 분리
 - 여러번 사용하는 함수는 따로 분리하여 필요한 곳에서 호출하여 사용할 수 있습니다.
 
-### SEO
+```
+  ┣ 📂utils
+  ┣ 📜axios.js
+  ┣ 📜carAttribute.js            // 상수 데이터
+  ┣ 📜comma.js                   // 3자리 숫자마다 콤마
+  ┣ 📜conversionDate.js          // 날짜(월, 일, 요일) 치환하는 함수
+  ┣ 📜getDateDiff.js             // 신규 뱃지 확인하는 함수
+  ┗ 📜getKeyByValue.js           // 객체의 키와 값을 반환하는 함수
+```
+
+## 🔫 트러블 슈팅
+
+### SEO 설정
 - react-helmet은 비동기 데이터 처리에 문제가 생길 수 있어, 여러 스레드로부터 동시에 접근이 이루어져도 프로그램의 실행에 문제가 없는 thread-safe한 react-helmet-async 라이브러리를 사용했습니다.
+- 하지만 meta 태그 크롤링 이후에 데이터를 받아오기 때문에 웹 페이지에는 데이터가 meta 태그에 반영되지 않는 문제를 발견했습니다.
+- 이러한 문제점으로 react-snap을 사용했으나 build 단계에서 페이지 별 index.html이 생성되지 않아 meta 태그에 반영 되지 않았습니다.
+- 참고했던 링크 : [[공식 GitHub](https://github.com/stereobooster/react-snap)] [[블로그](https://jinn2u.tistory.com/16)]
