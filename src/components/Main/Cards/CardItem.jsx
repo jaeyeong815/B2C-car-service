@@ -3,7 +3,7 @@ import color from '../../../styles/color';
 import { getDateDiff } from '../../../utils/getDateDiff';
 import NewItemTag from './NewItemTag';
 
-const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount, createdAt }) => {
+const CardItem = ({ brand, name, segment, imageUrl, fuelType, amount, createdAt, id }) => {
   return (
     <StCardItem>
       <div className="contentWrapper">
