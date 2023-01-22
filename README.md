@@ -186,7 +186,7 @@ $ yarn start
 
 ### 1) Best Pracice로 선정된 이유
 
-[관련 Merged](https://github.com/jaeyeong815/B2C-car-service/pull/9)
+[관련 Merged](https://github.com/WantedPreonboardingFE5team/pre-onboarding-7th-2-1-5/pull/17)
 
 **1. Context API**
 
@@ -208,17 +208,65 @@ https://github.com/jaeyeong815/B2C-car-service/blob/1f0e3e3052108a98d42aeaabc9bd
 공통으로 사용되는 컴포넌트를 분리하여 재사용성을 높였으며 한 컴포넌트에는 한가지 역할만 있도록 구현했습니다.<br>
 또한 여러번 사용하는 함수는 utils에 따로 분리하여 필요한 곳에서 호출하여 사용할 수 있도록 구현했습니다.
 
+<details>
+<summary>📦 구현했던 파일 구조</summary>
+<div markdown="1">
+
+```
+📦src
+ ┣ 📂apis
+ ┃ ┗ 📜apis.js
+ ┣ 📂assets
+ ┃ ┗ 📜BackIcon.jsx
+ ┣ 📂components
+ ┃ ┣ 📂Detail
+ ┃ ┃ ┣ 📜CarDetail.jsx
+ ┃ ┃ ┣ 📜ListContent.jsx
+ ┃ ┃ ┗ 📜ListHeader.jsx
+ ┃ ┣ 📂Main
+ ┃ ┃ ┣ 📂Category
+ ┃ ┃ ┃ ┣ 📜Category.jsx
+ ┃ ┃ ┃ ┣ 📜CategoryFilter.jsx
+ ┃ ┃ ┃ ┗ 📜CategoryTag.jsx
+ ┃ ┃ ┣ 📜CardItem.jsx
+ ┃ ┃ ┣ 📜CardList.jsx
+ ┃ ┃ ┣ 📜CardSlide.jsx
+ ┃ ┃ ┗ 📜NewItemTag.jsx
+ ┃ ┣ 📜Guide.jsx
+ ┃ ┗ 📜Header.jsx
+ ┣ 📂context
+ ┃ ┗ 📜CarContext.js
+ ┣ 📂pages
+ ┃ ┣ 📜Detail.jsx
+ ┃ ┗ 📜Main.jsx
+ ┣ 📂styles
+ ┃ ┣ 📜GlobalStyle.js
+ ┃ ┗ 📜color.js
+ ┣ 📂utils
+ ┃ ┣ 📜category.js
+ ┃ ┣ 📜comma.js
+ ┃ ┣ 📜conversionDate.js
+ ┃ ┣ 📜conversionFuelType.js
+ ┃ ┗ 📜conversionSegment.js
+ ┣ 📜App.js
+ ┣ 📜Router.jsx
+ ┗ 📜index.js
+```
+
+</div>
+</details>
+
 <br>
 
 ### 2) 이후 개선한 점
 
 **1. SEO 최적화**
 
-react-helmet과 react-snap을 이용하여 SEO 최적화하였습니다.
+react-helmet과 react-snap을 이용하여 SEO 최적화를 하였습니다.
 
 **2. axios 인스턴스를 생성하여 모듈화**
 
-여러번 사용되는 서버 URL을 baseUrl로 설정하여 코드 중복 최소화하였습니다.
+여러번 사용되는 서버 URL을 baseUrl로 설정하여 axios 인스턴스를 생성하면서 코드 중복 최소화하였습니다.
 
 **3. 카테고리, 차량 정보 등 문자열 상수화**
 
