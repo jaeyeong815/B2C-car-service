@@ -297,6 +297,10 @@ https://github.com/jaeyeong815/B2C-car-service/blob/b4b0cbf1fec50806f0c9dfb7efa8
 
 <img src='https://user-images.githubusercontent.com/85178602/213916313-75d1d9a0-9c6c-4807-891e-a40388c7d148.gif' width='300px' alt='동작화면' />
 
+### SEO 최적화 기능 구현 화면
+
+<img width="272" alt="image" src="https://user-images.githubusercontent.com/85178602/226554211-3148e66d-9229-4007-9e37-95ba2e5397fe.png">
+
 ### 메인 캡쳐
 
 <img width="300" alt="메인" src="https://user-images.githubusercontent.com/85178602/213916420-6c4e9fb7-1805-492c-a546-d5a75730a3ef.png">
